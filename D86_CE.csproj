@@ -488,4 +488,10 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="other\images\banner.png" />
+    <Content Include="other\images\mainmenu.png" />
+    <Content Include="other\images\multiplayer.png" />
+    <Content Include="other\images\singelplayer.png" />
+  </ItemGroup>
 </Project>
