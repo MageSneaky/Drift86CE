@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://sneaky.pink">
-    <img src="https://sneaky.pink/images/d86banner.png"></a>
+    <img src="other/images/banner.png"></a>
 </p>
 <p align="center">
 <a href="https://github.com/MageSneaky/Drift86CE/releases"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/MageSneaky/Drift86CE/total?color=pink&label=Downloads&logo=github&style=flat-square"></a>

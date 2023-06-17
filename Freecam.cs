@@ -135,6 +135,7 @@ namespace D86_CE
                     }
                 }
                 Main.freeCamSpeed.Value += Input.mouseScrollDelta.y;
+                Main.freeCamSpeed.Value = Mathf.Clamp(Main.freeCamSpeed.Value, 1, 1000);
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
                     cSpeed = Main.freeCamSpeed.Value * 2f;

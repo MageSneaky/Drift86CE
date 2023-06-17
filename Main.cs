@@ -35,6 +35,7 @@ namespace D86_CE
         public static GameController gameController;
         public static SelectCarMenuUI selectCarMenuUI;
         public static CarController p_Car;
+        public static Camera mainCamera;
 
         //General
         public static bool cursorLocked = false;
@@ -175,6 +176,10 @@ namespace D86_CE
             }
             if (Helper.InGame())
             {
+                if(!mainCamera)
+                {
+                    mainCamera = Camera.main;
+                }
                 if (Input.GetKeyDown(freeCamkey.Value))
                 {
                     if (!gameController)
@@ -216,11 +221,14 @@ namespace D86_CE
                     freeCamEnabled = !freeCamEnabled;
                     if (freeCamEnabled)
                     {
+                        
                         p_Car.enabled = false;
                         p_Car.GetComponent<Rigidbody>().isKinematic = true;
                         freeCam.enabled = true;
                         freeCamHolder.GetComponent<AudioListener>().enabled = true;
                         p_Car.GetComponent<AudioListener>().enabled = false;
+                        freeCamHolder.GetComponent<Camera>().tag = "MainCamera";
+                        mainCamera.GetComponent<Camera>().tag = "Untagged";
                     }
                     else
                     {
@@ -239,6 +247,8 @@ namespace D86_CE
                         freecam.savesList = null;
                         freecam.playersList = null;
                         p_Car.GetComponent<AudioListener>().enabled = true;
+                        mainCamera.GetComponent<Camera>().tag = "MainCamera";
+                        freeCamHolder.GetComponent<Camera>().tag = "Untagged";
                     }
                 }
             }
